@@ -3,7 +3,7 @@ import Gif from "./Gif";
 import getGifs from "../services/getGifs";
 import logo from "../../src/loading.svg"
 
-const ListOfGifs = ({ params: { keyword } }) => {
+const ListOfGifs = ({ keyword }) => {
   const [loading, setLoading] = useState(false);
   const [gifs, setGifs] = useState([]);
 
