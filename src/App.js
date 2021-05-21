@@ -1,20 +1,18 @@
-import "./App.css";
-import ListOfGifs from "./components/ListOfGifs";
-import { Route } from "wouter";
-import Home from "./pages/Home";
-import Results from "./pages/Results";
+import { Route } from 'wouter'
+import Home from './pages/Home'
+import SearchResults from './pages/SearchResults'
+import './App.css'
 
-function App() {
+function App () {
   return (
     <div className="App">
       <section className="App-content">
         <h1>Giffy</h1>
         <Route path="/" component={Home} />
-        <Route path="/results/:keyword" component={Results} />
-
+        <Route path="/search/:keyword" component={SearchResults} />
       </section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
