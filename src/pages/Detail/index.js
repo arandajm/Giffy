@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Gif from '../../components/Gif'
-import GifsContext from '../../context/GifsContext'
+import useGlobalGifs from '../../hooks/useGlobalGifs'
 
 const Detail = ({ params: { id } }) => {
-  const { gifs } = useContext(GifsContext)
+  const gifs = useGlobalGifs()
   const { title, url } = gifs.find(g => g.id === id)
   return (
     <>
