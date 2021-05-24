@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLocation } from 'wouter'
 import ListOfGifs from '../../components/ListOfGifs'
+import TrendingSearches from '../../components/TrendingSearches'
 import { useGifs } from '../../hooks/useGifs'
 
 const Home = () => {
@@ -18,7 +19,9 @@ const Home = () => {
       <form onSubmit={handleSubmit}>
         <input type="text" value={keyword} onChange={evt => setKeyword(evt.target.value)} />
       </form>
+      <h2>Ultima Busqueda!!</h2>
       <ListOfGifs gifs={gifs} />
+      <TrendingSearches />
     </>
   )
 }

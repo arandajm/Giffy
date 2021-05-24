@@ -9,7 +9,13 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <h1>Giffy</h1>
+        <div>
+          <img
+            className="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/76/Giphy_Logo_9.2016.svg"
+            alt="logo"
+          />
+        </div>
         <GifsContextProvider>
           <Route path="/" component={Home} />
           <Route path="/search/:keyword" component={SearchResults} />
