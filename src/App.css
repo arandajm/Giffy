@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #121119;
 }
 
 .App-content {
@@ -11,9 +12,9 @@
   color: white;
 }
 
-.App-content .logo {
+/* .App-content .logo {
   width: 25%;
-}
+} */
 
 button {
   font-size: 48px;
