@@ -1,4 +1,4 @@
-import { FormControl, Input, Stack, Image } from '@chakra-ui/react'
+import { Input, Stack, Image } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useLocation } from 'wouter'
 
@@ -19,9 +19,9 @@ const Header = () => {
         alt="logo"
         width={{ base: '50%', md: '25%' }}
       />
-      <FormControl onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Input placeholder="Search all the gifs..." value={keyword} onChange={evt => setKeyword(evt.target.value)} />
-      </FormControl>
+      </form>
     </Stack>
   )
 }
