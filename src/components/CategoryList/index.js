@@ -7,7 +7,7 @@ const CategoryList = ({ title = 'Titulo', options = [] }) => (
     <h1>{title}</h1>
     <div className="CategoryList">
       {options.map(opt => (
-        <Category name={opt} />
+        <Category name={opt} key={opt} />
       ))}
     </div>
   </>
