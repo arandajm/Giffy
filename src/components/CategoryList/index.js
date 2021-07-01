@@ -1,15 +1,15 @@
-import { Link } from 'wouter'
+import { List } from '@chakra-ui/react'
 import Category from '../Category'
 import './CategoryList.css'
 
 const CategoryList = ({ title = 'Titulo', options = [] }) => (
   <>
     <h1>{title}</h1>
-    <div className="CategoryList">
+    <List spacing={3}>
       {options.map(opt => (
         <Category name={opt} key={opt} />
       ))}
-    </div>
+    </List>
   </>
 )
 

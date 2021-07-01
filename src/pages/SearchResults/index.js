@@ -1,7 +1,7 @@
 import React from 'react'
-import ListOfGifs from '../../components/ListOfGifs'
-import Spinner from '../../components/Spinner'
-import { useGifs } from '../../hooks/useGifs'
+import ListOfGifs from 'components/ListOfGifs'
+import Spinner from 'components/Spinner'
+import { useGifs } from 'hooks/useGifs'
 
 const SearchResults = ({ params: { keyword } }) => {
   const { loading, gifs } = useGifs(keyword)
