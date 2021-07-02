@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
 import GifsContext from '../context/GifsContext'
 import getGifs from '../services/getGifs'
-
+const INITIAL_PAGE = 0
 export function useGifs(keyword) {
   const [loading, setLoading] = useState(false)
+  const [loadingNextPage, setLoadingNextPage] = useState(false)
+  const [page, setPage] = useState(INITIAL_PAGE)
   const { gifs, setGifs } = useContext(GifsContext)
 
   console.log('gifs: ', gifs)
@@ -20,5 +22,12 @@ export function useGifs(keyword) {
     }, 3000)
   }, [keyword, setGifs])
 
-  return { loading, gifs }
+  useEffect(() => {
+    if (page === INITIAL_PAGE) return
+    setLoadingNextPage(true)
+    getGifs(keywordToUse, page).then(newGifs => setGifs(prevGifs => [...prevGifs, ...newGifs]))
+    setLoadingNextPage(false)
+  }, [keyword, page, setGifs])
+
+  return { loading, loadingNextPage, gifs, setPage }
 }
