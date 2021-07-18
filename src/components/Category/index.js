@@ -1,16 +1,16 @@
-import { ListIcon, ListItem } from '@chakra-ui/react'
-import { StarIcon } from '@chakra-ui/icons'
+import { ListIcon, ListItem, Link as LinkChakra } from '@chakra-ui/react'
+import { CheckCircleIcon } from '@chakra-ui/icons'
 import { Link } from 'wouter'
 import './Category.css'
 
 const Category = ({ name }) => (
   <Link to={`/search/${name}`} className="Category">
-    <a>
+    <LinkChakra mr="2">
       <ListItem>
-        <ListIcon as={StarIcon} color="green.500" />
+        <ListIcon as={CheckCircleIcon} color="green.500" boxSize="4" />
         {name}
       </ListItem>
-    </a>
+    </LinkChakra>
   </Link>
 )
 

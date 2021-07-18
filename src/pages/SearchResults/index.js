@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '@chakra-ui/react'
 import ListOfGifs from 'components/ListOfGifs'
 import Spinner from 'components/Spinner'
 import { useGifs } from 'hooks/useGifs'
@@ -16,9 +17,10 @@ const SearchResults = ({ params: { keyword } }) => {
         <Spinner />
       ) : (
         <>
-          <h2>Searching gifs about {keyword}</h2>
-          <ListOfGifs gifs={gifs} />
-          <button onClick={handleNextPage}>Get next page</button>
+          <ListOfGifs gifs={gifs} title={`Searching gifs about ${keyword}`} />
+          <Button colorScheme="blue" size="lg" onClick={handleNextPage}>
+            Get next page
+          </Button>
         </>
       )}
     </>

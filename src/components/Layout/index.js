@@ -4,7 +4,7 @@ import Header from './Header'
 
 const Layout = ({ children }) => (
   <Stack minHeight="100vh" className="App-content">
-    <Container maxW="6xl" alignSelf="center">
+    <Container maxW="10xl" alignSelf="center">
       <Header />
       {children}
     </Container>
